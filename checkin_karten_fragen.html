@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Check-in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(151,191,13);
+      font-family: 'Titillium Web', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    .karte {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 600px;
+      font-size: 1.2em;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background-color: white;
+      color: rgb(151,191,13);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Check-in</h1>
+  <div class="karte" id="frageContainer">Hier erscheint die Frage...</div>
+  <button onclick="zeigeZufallsfrage()">Neue Karte anzeigen</button>
+
+  <script>
+    const fragen = [
+      "Welche Erwartungen hast du an diesen Termin?",
+      "Wie ist Dein Energielevel heute auf einer Skala von 1 bis 10?",
+      "Wenn du jetzt nicht hier wärst, wo wärst du dann am liebsten?",
+      "Wohin möchtest Du unbedingt einmal reisen?",
+      "Was hat Dich zuletzt überrascht?",
+      "Welchen Fehler hast Du im letzten Jahr gemacht und wofür war der gut?",
+      "Meine geheime Leidenschaft ist...",
+      "Welches ist Dein grösstes Talent?",
+      "Was kannst Du zum Erfolg unseres Unternehmens beitragen?",
+      "Unser Unternehmen ist klasse, weil...",
+      "Wie bist Du zu unserem Unternehmen gekommen?",
+      "Welche Eigenschaften, die Du nicht hast, schätzt Du an anderen?",
+      "Wie warst Du als Schüler? Was war der grösste Unsinn, den Du 'angestellt' hast?",
+      "Welches ist Dein Lieblingsland und wieso?",
+      "Was muss man tun, um Dich zu begeistern?",
+      "Wenn Du ein Tier wärst, welches wäre das? Und warum?",
+      "Was war Dein schönstes Erlebnis in den letzten Wochen?",
+      "Was ist Dir in den letzten Wochen gut gelungen? Was nicht?",
+      "Womit kann man Dich auf die Palme bringen?",
+      "Heute ist ein schöner Tag, weil...",
+      "Was würdest Du tun, wenn Du Bundespräsident:in wärst?",
+      "Welcher ist der schönste Ort der Welt für Dich?",
+      "Was machst Du am liebsten in Deiner Freizeit?",
+      "Welcher war Dein Wunschberuf als Kind? Welcher ist es heute?",
+      "Wenn Du ein Superheld wärst, wäre Dein Name...?",
+      "Was geht Dir durch den Kopf?",
+      "Was würdest Du tun, wenn Du 3 Monate Auszeit nehmen könntest?",
+      "In Deinem früheren Leben warst Du...?",
+      "Welches war das schönste Kompliment, das Du im letzten Jahr erhalten hast?",
+      "Warum freust Du Dich heute?",
+      "Woraus hast du in den letzten Wochen Kraft geschöpft?",
+      "Welche Aufgabe hat dir in der letzten Woche am meisten Spass gemacht?",
+      "Was war deine größte Herausforderung in der letzten Woche? Was beschäftigt dich davon noch?",
+      "Was weiss vermutlich niemand von Dir hier im Raum?",
+      "Worauf warst Du im letzten Jahr so richtig stolz?",
+      "Wie war die letzte Woche für Deine:n Kolleg:in, der/die links neben Dir sitzt?",
+      "Was ist deine Lieblingssportart und warum?",
+      "Wie ist deine Kenntnis zum Thema (XYZ) auf einer Skala von 1-10 (Aufstellung im Raum)",
+      "Was ist dein aktuelles Lieblingslied und warum?",
+      "Wenn der letzte Monat ein Film wäre, wie würde er heißen?",
+      "Was hat jemand anders für dich Grossartiges getan?"
+    ];
+
+    function zeigeZufallsfrage() {
+      const zufallsIndex = Math.floor(Math.random() * fragen.length);
+      document.getElementById("frageContainer").textContent = fragen[zufallsIndex];
+    }
+  </script>
+</body>
+</html>
